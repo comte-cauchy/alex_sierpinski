@@ -58,28 +58,27 @@ brl(black):b,l16,red1,l17
 brl(black):b,l17,red1,l18
 brl(black):b,l18,red1,l19
 brl(black):b,l19,red1,l20
-brl(black):mc,l20,red1,bc
+brl(black):ms,l20,red1,b
 
-##midle tile
-mi(black):sd,b,mc,ld
 
 ##collision rays
 #diagonal
-di(white):w,w,di,di
-di(white):di,di,b,b
+di1(white):w,w,di,di
+di2(white):di,di,b,b
+
+#lower diag start & end- tile
+ls(black):mc,b,ms,di
+le(black):b,mc,di,me
+
 
 #left diagonal
-ld(white):w,ld,ld,w
-ld(white):ld,w,w,ld
+mi(white):di,ld,mc,mc
 
-ld(white):w,ld,ld,b
-ld(black):ld,b,b,ld
+ld1(white):w,ld,ld,w
+ld2(white):ld,w,w,ld
 
-kk(white):di,ld,sd,b
-ld(white):ld,w,di,ld
+ls(white):w,ld,di,ld
 lt(white):re,red2,rc,ld
-
-le(black):ld,bc,red1,be
 
 
 ##white diagonal 
@@ -91,11 +90,15 @@ le(black):ld,bc,red1,be
 #middle ray upwards
 mu(black):mc,b,mc,w
 
+#middle ray to left
+ml(black):b,mc,w,mc
+
 #bottom middle to left ray
-ml(black):b,bc,red1,bc
+bl(black):b,b,red1,b
 
 #bottom left ray up
-lu(black):lc,b,lc,red1
+lu(black):b,b,b,red1
+me(black):b,me,b,red1
 
 #top to right ray
 tr(white):red2,tc,w,tc
@@ -105,10 +108,10 @@ ru(white):rc,red2,rc,w
 
 ##corner-tiles
 #bottom left corner tile
-bl(black):lc,be,red1,red1
+bl(black):b,b,red1,red1
 
 #top left corner tile
-tl(black):red2,r1,lc,red1
+tl(black):red2,r1,b,red1
 
 #top right corner tile
 tr(white):red2,red2,re,tc
