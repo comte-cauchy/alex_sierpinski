@@ -1,0 +1,124 @@
+##seed-tile:bottom right
+s(black):u1,red2,red1,l1
+
+##hard-code counting
+#13 tiles bottom right-up
+bru(black):u2,red2,u1,w
+bru(black):u3,red2,u2,w
+bru(black):u4,red2,u3,w
+
+bru(white):u5,red2,u4,b
+bru(white):u6,red2,u5,w
+bru(white):u7,red2,u6,w
+bru(white):u8,red2,u7,w
+
+bru(black):u9,red2,u8,b
+bru(black):u10,red2,u9,w
+bru(black):u11,red2,u10,w
+bru(black):u12,red2,u11,w
+
+bru(white):u13,red2,u12,b
+bru(white):rc,red2,u13,di
+
+#13 tiles top left-right
+tlr(black):red2,r1,w,r2
+tlr(black):red2,r2,w,r3
+tlr(black):red2,r3,w,r4
+
+tlr(white):red2,r4,b,r5
+tlr(white):red2,r5,w,r6
+tlr(white):red2,r6,w,r7
+tlr(white):red2,r7,w,r8
+
+tlr(black):red2,r8,b,r9
+tlr(black):red2,r9,w,r10
+tlr(black):red2,r10,w,r11
+tlr(black):red2,r11,w,r12
+
+tlr(white):red2,r12,b,r13
+tlr(white):red2,r13,di,tc
+
+#20 tiles bottom right-left
+brl(black):b,l1,red1,l2
+brl(black):b,l2,red1,l3
+brl(black):b,l3,red1,l4
+brl(black):b,l4,red1,l5
+brl(black):b,l5,red1,l6
+brl(black):b,l6,red1,l7
+brl(black):b,l7,red1,l8
+brl(black):b,l8,red1,l9
+brl(black):b,l9,red1,l10
+brl(black):b,l10,red1,l11
+brl(black):b,l11,red1,l12
+brl(black):b,l12,red1,l13
+brl(black):b,l13,red1,l14
+brl(black):b,l14,red1,l15
+brl(black):b,l15,red1,l16
+brl(black):b,l16,red1,l17
+brl(black):b,l17,red1,l18
+brl(black):b,l18,red1,l19
+brl(black):b,l19,red1,l20
+brl(black):mc,l20,red1,bc
+
+##midle tile
+mi(black):sd,b,mc,ld
+
+##collision rays
+#diagonal
+di(white):w,w,di,di
+di(white):di,di,b,b
+
+#left diagonal
+ld(white):w,ld,ld,w
+ld(white):ld,w,w,ld
+
+ld(white):w,ld,ld,b
+ld(black):ld,b,b,ld
+
+kk(white):di,ld,sd,b
+ld(white):ld,w,di,ld
+lt(white):re,red2,rc,ld
+
+le(black):ld,bc,red1,be
+
+
+##white diagonal 
+#ws(white):wd,w,di,wd
+#wd(white):wd,w,w,wd
+#wd(white):w,wd,wd,w
+#we(white):re,red2,rc,wd
+
+#middle ray upwards
+mu(black):mc,b,mc,w
+
+#bottom middle to left ray
+ml(black):b,bc,red1,bc
+
+#bottom left ray up
+lu(black):lc,b,lc,red1
+
+#top to right ray
+tr(white):red2,tc,w,tc
+
+#right to top ray
+ru(white):rc,red2,rc,w
+
+##corner-tiles
+#bottom left corner tile
+bl(black):lc,be,red1,red1
+
+#top left corner tile
+tl(black):red2,r1,lc,red1
+
+#top right corner tile
+tr(white):red2,red2,re,tc
+
+
+##filler
+#sierpinski fillers
+sb1(black):b,b,w,b
+sb2(black):b,b,b,w
+sw1(white):w,w,w,w
+sw2(white):w,w,b,b
+
+seed=s
