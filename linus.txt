@@ -5,7 +5,7 @@ s(black):u1,red2,red1,l1
 #13 tiles bottom right-up
 bru(black):u2,red2,u1,w
 bru(black):u3,red2,u2,w
-bru(black):u4,red2,u3,w
+bru(black):u4,red2,u3,sd
 
 bru(white):u5,red2,u4,b
 bru(white):u6,red2,u5,w
@@ -28,66 +28,76 @@ tlr(white):red2,topw,w,topw
 
 tlr(white):red2,topw,di,topw
 
-#20 tiles bottom right-left
-brl(black):b,l1,red1,l2
-brl(black):b,l2,red1,l3
-brl(black):b,l3,red1,l4
-brl(black):b,l4,red1,l5
-brl(black):b,l5,red1,l6
-brl(black):b,l6,red1,l7
-brl(black):b,l7,red1,l8
-brl(black):b,l8,red1,l9
-brl(black):b,l9,red1,l10
-brl(black):b,l10,red1,l11
-brl(black):b,l11,red1,l12
-brl(black):b,l12,red1,l13
-brl(black):b,l13,red1,l14
-brl(black):b,l14,red1,l15
-brl(black):b,l15,red1,l16
-brl(black):b,l16,red1,l17
-brl(black):b,l17,red1,l18
-brl(black):b,l18,red1,l19
-brl(black):b,l19,red1,l20
-brl(black):ms,l20,red1,b
-
+brr(black):b,l1,red1,l1
+bre(black):sluss,l1,red1,fin
+brs(black):sp,fin,red1,bb
+#brl(black):b,l5,red1,l6
+#brl(black):b,l6,red1,l7
+#brl(black):b,l7,red1,l8
+#brl(black):b,l8,red1,l9
+#brl(black):b,l9,red1,l10
+#brl(black):b,l10,red1,l11
+#brl(black):b,l11,red1,l12
+#brl(black):b,l12,red1,l13
+#brl(black):b,l13,red1,l14
+#brl(black):b,l14,red1,l15
+#brl(black):b,l15,red1,l16
+#brl(black):b,l16,red1,l17
+#brl(black):b,l17,red1,l18
+#brl(black):b,l18,red1,l19
+#brl(black):b,l19,red1,l20
+bme(black):bme,bb,red1,bbb
+brs(black):mc,bbb,red1,b
 
 ##collision rays
 #diagonal
 di1(white):w,w,di,di
 di2(white):di,di,b,b
 
-#lower diag start & end- tile
-ls(black):mc,b,ms,di
-le(black):b,mc,di,me
-
 #topright diagonal
-mi(white):di,ld,mc,mc
+mi(white):di,sd,mi,b
+su(black):mi,b,mc,sd
 
-rd(white):w,ld,ld,w
-rd(white):ld,w,w,ld
+#rd(white):w,ld,ld,w
+#rd(white):ld,w,w,ld
 
-rd(white):ld,w,di,ld
-rt(white):re,red2,rc,ld
+rd(white):sd,w,di,sd
+rt(white):re,red2,rc,sd
+
+#special diagonal
+
+ms(black):b,b,sp,sd
+sd1(white):w,sd,sd,w
+sd2(white):sd,w,w,sd
+
+sd3(white):w,sd,blackie,b
+sd4(black):blackie,b,b,sd
+sds(white):w,sd,bme,b
+sdl(white):w,sd,be,b
+slu(white):w,sd,sluss,b
+
+be(black):be,b,red1,be
+
 
 #middle ray upwards
 mu(black):mc,b,mc,w
+sp(black):sp,b,sp,w
 
-#middle ray to left
-ml(black):b,mc,w,mc
+
 
 #bottom middle to left ray
 bl(black):b,b,red1,b
+br(black):b,bb,red1,bb
 
 #bottom left ray up
 lu(black):b,b,b,red1
-me(black):b,me,b,red1
 
 #right to top ray
 ru(white):rc,red2,rc,w
 
 ##corner-tiles
 #bottom left corner tile
-bl(black):b,b,red1,red1
+bl(black):b,be,red1,red1
 
 #top left corner tile
 tl(black):red2,topb,b,red1
@@ -98,9 +108,9 @@ tr(white):red2,red2,re,topw
 
 ##filler
 #sierpinski fillers
-sb1(black):b,b,w,b
-sb2(black):b,b,b,w
-sw1(white):w,w,w,w
-sw2(white):w,w,b,b
+sb(black):b,b,w,b
+sb(black):b,b,b,w
+sw(white):w,w,w,w
+sw(white):w,w,b,b
 
 seed=s
